@@ -1,0 +1,15 @@
+{
+    "name": "Tab Count",
+    "description": "Displays the number of google chrome tabs",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "tabs"
+    ]
+}
