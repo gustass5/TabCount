@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
-	<head></head>
+	<head>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
 	<body>
-		<div>
-			Tab count:
-			<span id="tabCount">0</span>
+		<div class="header">
+			<div class="headerItem">
+				Total tab count:
+				<span id="tabCount">0</span>
+			</div>
+			<div class="headerItem">
+				Tab group count:
+				<span id="tabGroupCount">0</span>
+			</div>
 		</div>
-		<div>
-			Tab group count:
-			<span id="tabGroupCount">0</span>
+
+		<div class="tabGroupHeader">
+			<span> Tab group </span>
+			<span> Count </span>
 		</div>
+		<div id="tabGroups"></div>
 		<script src="popup.js"></script>
 	</body>
 </html>
