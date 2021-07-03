@@ -23,6 +23,7 @@ const originalColors = {
 window.addEventListener('load', async () => {
 	// Get elements for count display
 	const tabElement = document.getElementById('tabCount');
+	const ungroupedTabsCountElement = document.getElementById('ungroupedTabsCount');
 	const tabGroupCountElement = document.getElementById('tabGroupCount');
 	const tabGroupElement = document.getElementById('tabGroups');
 
@@ -32,9 +33,12 @@ window.addEventListener('load', async () => {
 	const tabsOfTabGroups = tabGroups.map(tabGroup =>
 		tabs.filter(tab => tab.groupId === tabGroup.id)
 	);
-	console.log({ tabGroups });
+
 	// Set tab and tabGroup count
 	tabElement.innerHTML = `${tabs.length}`;
+	ungroupedTabsCountElement.innerHTML = `${
+		tabs.filter(tab => tab.groupId === -1).length
+	}`;
 	tabGroupCountElement.innerHTML = `${tabGroups.length}`;
 
 	// Update counts of tabGroups
