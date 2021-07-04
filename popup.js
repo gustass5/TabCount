@@ -23,6 +23,7 @@ const originalColors = {
 window.addEventListener('load', async () => {
 	// Get elements for count display
 	const tabElement = document.getElementById('tabCount');
+	const currentTabElement = document.getElementById('currentTabCount');
 	const ungroupedTabsCountElement = document.getElementById('ungroupedTabsCount');
 	const tabGroupCountElement = document.getElementById('tabGroupCount');
 	const tabGroupElement = document.getElementById('tabGroups');
@@ -34,8 +35,14 @@ window.addEventListener('load', async () => {
 		tabs.filter(tab => tab.groupId === tabGroup.id)
 	);
 
+	// Get info about currently focused window
+	const currentWindow = await chrome.windows.getCurrent();
+
 	// Set tab and tabGroup count
 	tabElement.innerHTML = `${tabs.length}`;
+	currentTabElement.innerHTML = `${
+		tabs.filter(tab => tab.windowId === currentWindow.id).length
+	}`;
 	ungroupedTabsCountElement.innerHTML = `${
 		tabs.filter(tab => tab.groupId === -1).length
 	}`;
