@@ -48,6 +48,12 @@ window.addEventListener('load', async () => {
 	}`;
 	tabGroupCountElement.innerHTML = `${tabGroups.length}`;
 
+	if (tabGroups.length === 0) {
+		const parent = document.createElement('div');
+		parent.innerHTML = 'No groups found';
+		tabGroupElement.appendChild(parent);
+	}
+
 	// Update counts of tabGroups
 	tabGroups.forEach((tabGroup, index) => {
 		// Create row for each tab group text
