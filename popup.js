@@ -79,7 +79,10 @@ window.addEventListener('load', async () => {
 		parent.appendChild(color);
 		parent.appendChild(textRow);
 		parent.addEventListener('click', async () => {
-			await chrome.tabs.highlight({ tabs: tabsOfTabGroups[index][0].index });
+			await chrome.tabs.highlight({
+				tabs: tabsOfTabGroups[index][0].index,
+				windowId: tabsOfTabGroups[index][0].windowId
+			});
 		});
 
 		tabGroupElement.appendChild(parent);
