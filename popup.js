@@ -6,7 +6,8 @@ const colors = {
 	green: '#22C55E',
 	pink: '#EC4899',
 	purple: '#8B5CF6',
-	cyan: '#06B6D4'
+	cyan: '#06B6D4',
+	orange: '#f59e0b'
 };
 
 const originalColors = {
