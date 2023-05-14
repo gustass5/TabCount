@@ -71,7 +71,7 @@ window.addEventListener('load', async () => {
 
 		// Color of each tab group
 		const color = document.createElement('div');
-		color.style.backgroundColor = colors[tabGroup.color];
+		color.style.backgroundColor = colors[tabGroup.color] || colors['grey'];
 
 		const parent = document.createElement('div');
 		parent.classList.add('tabGroup');
